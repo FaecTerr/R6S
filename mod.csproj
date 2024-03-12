@@ -1,0 +1,599 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B07BDC3C-3770-4A07-90D8-5C2A68E2172B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>R6S</RootNamespace>
+    <AssemblyName>R6S</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>.\</OutputPath>
+    <BaseIntermediateOutputPath>build\obj</BaseIntermediateOutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>.\</OutputPath>
+    <BaseIntermediateOutputPath>build\obj</BaseIntermediateOutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DGSteam">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Duck Game\DGSteam.dll</HintPath>
+    </Reference>
+    <Reference Include="DuckGame">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Steam\steamapps\common\Duck Game\DuckGame.exe</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Game, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.Game.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Xna.Framework.Graphics, Version=4.0.0.0, Culture=neutral, PublicKeyToken=842cf8be1de50553, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.Xna.Framework.Graphics.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="src\Breakables\HardWallEHE.cs" />
+    <Compile Include="src\Decorations\BackgroundThing.cs" />
+    <Compile Include="src\Breakables\BDoor.cs" />
+    <Compile Include="src\Breakables\BreakableAdder.cs" />
+    <Compile Include="src\Breakables\BreakableSurface.cs" />
+    <Compile Include="src\Breakables\Cover.cs" />
+    <Compile Include="src\Breakables\DroneHole.cs" />
+    <Compile Include="src\Breakables\Explosion.cs" />
+    <Compile Include="src\Breakables\FloorUEU.cs" />
+    <Compile Include="src\Decorations\Furniture.cs" />
+    <Compile Include="src\Decorations\Generator.cs" />
+    <Compile Include="src\Decorations\HangingWires.cs" />
+    <Compile Include="src\Decorations\Helicopter.cs" />
+    <Compile Include="src\Decorations\LightningSun.cs" />
+    <Compile Include="src\Decorations\Piano.cs" />
+    <Compile Include="src\Breakables\SoftFloorSES.cs" />
+    <Compile Include="src\Breakables\SoftWallESE.cs" />
+    <Compile Include="src\Decorations\CrawlingBugs.cs" />
+    <Compile Include="src\Decorations\Sofa.cs" />
+    <Compile Include="src\Decorations\TVDecor.cs" />
+    <Compile Include="src\Decorations\Ventilation.cs" />
+    <Compile Include="src\Devices\IHUD\Antidefuser.cs" />
+    <Compile Include="src\Devices\IHUD\BlackbeardShield.cs" />
+    <Compile Include="src\Devices\IHUD\BShield.cs" />
+    <Compile Include="src\Devices\IHUD\CCEblast.cs" />
+    <Compile Include="src\Devices\IHUD\EEONED.cs" />
+    <Compile Include="src\Devices\IHUD\SpecIO.cs" />
+    <Compile Include="src\Devices\IHUD\GarraHook.cs" />
+    <Compile Include="src\Devices\IHUD\ExPoD.cs" />
+    <Compile Include="src\Devices\IHUD\Glance.cs" />
+    <Compile Include="src\Devices\IHUD\HackingDevice.cs" />
+    <Compile Include="src\Devices\IHUD\HEL.cs" />
+    <Compile Include="src\Devices\IHUD\InvisibilityForDrones.cs" />
+    <Compile Include="src\Devices\IHUD\JackalTracker.cs" />
+    <Compile Include="src\Devices\IHUD\OperTrack.cs" />
+    <Compile Include="src\Devices\IHUD\ShieldKnife.cs" />
+    <Compile Include="src\Devices\IHUD\SilentStep.cs" />
+    <Compile Include="src\Devices\IHUD\SkeletonKey.cs" />
+    <Compile Include="src\Devices\Launchers\ParasyteLauncher.cs" />
+    <Compile Include="src\Devices\Launchers\Shumikha.cs" />
+    <Compile Include="src\Devices\Launchers\ShumikhaGrenade.cs" />
+    <Compile Include="src\Devices\Launchers\XKairos.cs" />
+    <Compile Include="src\Devices\Placeable\AmmoBox.cs" />
+    <Compile Include="src\Devices\Placeable\Banshee.cs" />
+    <Compile Include="src\Devices\Placeable\Beartrap.cs" />
+    <Compile Include="src\Devices\Placeable\Blackmirror.cs" />
+    <Compile Include="src\Devices\Placeable\TalonShield.cs" />
+    <Compile Include="src\Devices\Placeable\Hardbreach.cs" />
+    <Compile Include="src\Devices\Placeable\InactiveDefuserPlaceholder.cs" />
+    <Compile Include="src\Devices\Placeable\KonaStation.cs" />
+    <Compile Include="src\Devices\Placeable\Vulkan.cs" />
+    <Compile Include="src\Devices\Placeable\WoodenBarricade.cs" />
+    <Compile Include="src\Devices\Throwable\FragGrenade.cs" />
+    <Compile Include="src\Devices\Throwable\GolfStick.cs" />
+    <Compile Include="src\Devices\Throwable\Prism.cs" />
+    <Compile Include="src\Devices\Throwable\Ratero.cs" />
+    <Compile Include="src\Devices\Throwable\Razorbloom.cs" />
+    <Compile Include="src\Devices\Throwable\Selma.cs" />
+    <Compile Include="src\Devices\Throwable\TRAX.cs" />
+    <Compile Include="src\DinamicSFX.cs" />
+    <Compile Include="src\FloorMaterialChanger.cs" />
+    <Compile Include="src\Guns\LMG\ALDA.cs" />
+    <Compile Include="src\Guns\LMG\T95LSW.cs" />
+    <Compile Include="src\Guns\Pistols\Bailif.cs" />
+    <Compile Include="src\Guns\Pistols\D50.cs" />
+    <Compile Include="src\Guns\Pistols\Mag44.cs" />
+    <Compile Include="src\Guns\Pistols\P229.cs" />
+    <Compile Include="src\Guns\DMR\AR1550.cs" />
+    <Compile Include="src\Guns\Pistols\RG15.cs" />
+    <Compile Include="src\Guns\Rifle\AR33.cs" />
+    <Compile Include="src\Guns\Pistols\FiveSeven.cs" />
+    <Compile Include="src\Guns\Rifle\ARX200.cs" />
+    <Compile Include="src\Guns\Rifle\C7E.cs" />
+    <Compile Include="src\Guns\Rifle\M4.cs" />
+    <Compile Include="src\Guns\Rifle\Spear308.cs" />
+    <Compile Include="src\Guns\Shotguns\ITA12S.cs" />
+    <Compile Include="src\Guns\Shotguns\M1014.cs" />
+    <Compile Include="src\Guns\Shotguns\M590A1.cs" />
+    <Compile Include="src\Guns\Pistols\Muesoc.cs" />
+    <Compile Include="src\Guns\Pistols\P226.cs" />
+    <Compile Include="src\Guns\Shotguns\SIX12SD.cs" />
+    <Compile Include="src\Guns\Slug\AA12.cs" />
+    <Compile Include="src\Guns\SMG\9mmC1.cs" />
+    <Compile Include="src\Guns\SMG\Bearing9.cs" />
+    <Compile Include="src\Guns\SMG\CZ75.cs" />
+    <Compile Include="src\Guns\SMG\K1A.cs" />
+    <Compile Include="src\Guns\SMG\MPX.cs" />
+    <Compile Include="src\Guns\SMG\P10Roni.cs" />
+    <Compile Include="src\Guns\SMG\PDW9.cs" />
+    <Compile Include="src\Guns\SMG\Scorpion.cs" />
+    <Compile Include="src\Guns\SMG\SMG-12.cs" />
+    <Compile Include="src\Guns\SMG\SPSMG9.cs" />
+    <Compile Include="src\Guns\SMG\T5.cs" />
+    <Compile Include="src\Guns\Slug\TCSG12.cs" />
+    <Compile Include="src\Guns\SMG\UZK50G.cs" />
+    <Compile Include="src\Guns\SMG\Vector45ACP.cs" />
+    <Compile Include="src\Main\GUI\BackButton.cs" />
+    <Compile Include="src\Main\GUI\Button.cs" />
+    <Compile Include="src\Main\GUI\ChangePage.cs" />
+    <Compile Include="src\Main\GUI\InfoFeedTab.cs" />
+    <Compile Include="src\Main\GUI\LocationMarker.cs" />
+    <Compile Include="src\Main\Menu\CustomizationLevel\CustomizationLevel.cs" />
+    <Compile Include="src\Main\Menu\CustomizationLevel\CustomizationLevelSwitch.cs" />
+    <Compile Include="src\Main\Menu\CustomizationLevel\CustomThings.cs" />
+    <Compile Include="src\Main\Menu\CustomizationLevel\GlobalSkin.cs" />
+    <Compile Include="src\Main\Menu\MainMenu.cs" />
+    <Compile Include="src\Main\Menu\NewsPageButton.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BannerAnarchy.cs" />
+    <Compile Include="src\Main\Scripting\DMGamemodeScripter.cs" />
+    <Compile Include="src\Main\GUI\ManualSiteSelection.cs" />
+    <Compile Include="src\Main\Scripting\MapLayer.cs" />
+    <Compile Include="src\NetMessages\NMFinkaBoost.cs" />
+    <Compile Include="src\Operators\Attackers\Ace.cs" />
+    <Compile Include="src\Operators\Attackers\Flores.cs" />
+    <Compile Include="src\Operators\Attackers\Amaru.cs" />
+    <Compile Include="src\Operators\Attackers\Lion.cs" />
+    <Compile Include="src\Operators\Attackers\Zero.cs" />
+    <Compile Include="src\Operators\Defenders\Clash.cs" />
+    <Compile Include="src\Operators\Defenders\Maestro.cs" />
+    <Compile Include="src\Operators\Defenders\Melusi.cs" />
+    <Compile Include="src\Operators\Defenders\Solis.cs" />
+    <Compile Include="src\Operators\Defenders\Thorn.cs" />
+    <Compile Include="src\Operators\Defenders\Thunderbird.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\CCEstun.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\Effect.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\EMPdEffect.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\ExtraArmor.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\Intoxicated.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\JammedEffect.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\Overheal.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\PhoneCalled.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\PingedByAlibi.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\ProximityAlarmed.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\SpawnArmor.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\Spotted.cs" />
+    <Compile Include="src\Operators\Mechanics\Effects\StairsCooldown.cs" />
+    <Compile Include="src\Operators\Mechanics\HandAnimation.cs" />
+    <Compile Include="src\Operators\Mechanics\Ping.cs" />
+    <Compile Include="src\Operators\Mechanics\TerroristHead.cs" />
+    <Compile Include="src\Main\Sckins\Samples\44MagHeart.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AK47MEWMEW.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AlibiWhitenoise.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AlternatedM1014.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AlternatedMonty.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AR1550Transisted.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AR33Ice.cs" />
+    <Compile Include="src\Main\Sckins\Samples\AutumnRibbonsMP5.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BanditBattery.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BannerChains.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BannerEyes.cs" />
+    <Compile Include="src\Main\Sckins\Samples\Bearing9Crystals.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BloodshedBanner.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BloodsplatDoc.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BShieldAngryBoi.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BurningARX.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BurningMP7.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BurningMPX.cs" />
+    <Compile Include="src\Main\Sckins\Samples\BurningPDW.cs" />
+    <Compile Include="src\Main\Sckins\Samples\C416Vector.cs" />
+    <Compile Include="src\Main\Sckins\Samples\CaptainCapitao.cs" />
+    <Compile Include="src\Main\Sckins\Samples\Commando552Umbrella.cs" />
+    <Compile Include="src\Main\Sckins\Samples\CrocoTCSG12.cs" />
+    <Compile Include="src\Main\Sckins\Samples\CurcuitBanner.cs" />
+    <Compile Include="src\Main\Sckins\Samples\DarkSightM870.cs" />
+    <Compile Include="src\Main\Sckins\Samples\DemonsBanner.cs" />
+    <Compile Include="src\Main\Sckins\Samples\DevilMute.cs" />
+    <Compile Include="src\Main\Sckins\Samples\DP27Fmeech.cs" />
+    <Compile Include="src\Main\Sckins\Samples\ElaEmo.cs" />
+    <Compile Include="src\Main\Sckins\Samples\EncasedHK417.cs" />
+    <Compile Include="src\Main\Sckins\Samples\EncasedInIceAK12.cs" />
+    <Compile Include="src\Main\Sckins\Samples\F2Angel.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FellaDokkaebi.cs" />
+    <Compile Include="src\Main\Sckins\Samples\fivesevenDrill.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FlagLFP586.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FmeechTachanka.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FMGIce.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FractureASH.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FutuSledge.cs" />
+    <Compile Include="src\Main\Sckins\Samples\FuzeNoEvidence.cs" />
+    <Compile Include="src\Main\Sckins\Samples\G36Toxicity.cs" />
+    <Compile Include="src\Main\Sckins\Samples\G8A1Sideways.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GamerJackal.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GlazBadtime.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GlazElite.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GoldenD50.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GoldMeusoc.cs" />
+    <Compile Include="src\Main\Sckins\Samples\GSH18Neon.cs" />
+    <Compile Include="src\Main\Sckins\Samples\IceSGCQB.cs" />
+    <Compile Include="src\Main\Sckins\Samples\ITA12SIceMaiden.cs" />
+    <Compile Include="src\Main\Sckins\Samples\JackalParty.cs" />
+    <Compile Include="src\Main\Sckins\Samples\K1ADummy.cs" />
+    <Compile Include="src\Main\Sckins\Samples\L85A2LOVECRAFT.cs" />
+    <Compile Include="src\Main\Sckins\Samples\L85A2Shapes.cs" />
+    <Compile Include="src\Main\Sckins\Samples\LesionWorkedOut.cs" />
+    <Compile Include="src\Main\Sckins\Samples\LFPLighting.cs" />
+    <Compile Include="src\Main\Sckins\Samples\LMGE105ICE.cs" />
+    <Compile Include="src\Main\Sckins\Samples\LordThatcher.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MissingVigil.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MotoRiderPulse.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MP5Devil.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MP5layout.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MP7Axe.cs" />
+    <Compile Include="src\Main\Sckins\Samples\MP7Iron.cs" />
+    <Compile Include="src\Main\Sckins\Samples\NyanDoc.cs" />
+    <Compile Include="src\Main\Sckins\Samples\OilSpitPMM.cs" />
+    <Compile Include="src\Main\Sckins\Samples\OTs11Shiny.cs" />
+    <Compile Include="src\Main\Sckins\Samples\P12Flag.cs" />
+    <Compile Include="src\Main\Sckins\Samples\P226Silver.cs" />
+    <Compile Include="src\Main\Sckins\Samples\P229Crystals.cs" />
+    <Compile Include="src\Main\Sckins\Samples\P90Antipods.cs" />
+    <Compile Include="src\Main\Sckins\Samples\P9Wood.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PathfinderBandit.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PathfinderBlitz.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PathfinderFuze.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PathfinderGlaz.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PathfinderIQ.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PlagueDoctorSmoke.cs" />
+    <Compile Include="src\Main\Sckins\Samples\PureTwitch.cs" />
+    <Compile Include="src\Main\Sckins\Samples\R4CBlood.cs" />
+    <Compile Include="src\Main\Sckins\Samples\RainbowMPX.cs" />
+    <Compile Include="src\Main\Sckins\Samples\RenewedCastle.cs" />
+    <Compile Include="src\Main\Sckins\Samples\RetireeKaid.cs" />
+    <Compile Include="src\Main\Sckins\Samples\RG15Freezed.cs" />
+    <Compile Include="src\Main\Sckins\Samples\RP41Beetles.cs" />
+    <Compile Include="src\Main\Sckins\Samples\Scorpionx2.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SeptemberM4.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SMG12Tears.cs" />
+    <Compile Include="src\Main\Sckins\Samples\TrueGamerFinka.cs" />
+    <Compile Include="src\Main\Sckins\Samples\VibeNomad.cs" />
+    <Compile Include="src\Main\Sckins\Samples\VineBanner.cs" />
+    <Compile Include="src\Main\Sckins\SkinsCollectionManager.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SkullKapkan.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SlavaKoroluTachanka.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SleepyEcho.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SMG11Love.cs" />
+    <Compile Include="src\Main\Sckins\Samples\StyledCutMaverick.cs" />
+    <Compile Include="src\Main\Sckins\Samples\SyringeSASG11.cs" />
+    <Compile Include="src\Main\Sckins\Samples\ThermiteNord.cs" />
+    <Compile Include="src\Main\Sckins\Samples\ToxicityM590A1.cs" />
+    <Compile Include="src\Main\Sckins\Samples\TRONJager.cs" />
+    <Compile Include="src\Main\Sckins\Samples\TwitchTwitch.cs" />
+    <Compile Include="src\Main\Sckins\Samples\UMP45Magnet.cs" />
+    <Compile Include="src\Main\Sckins\Samples\ValkyrieRaver.cs" />
+    <Compile Include="src\Main\Sckins\Samples\VSNmutagen.cs" />
+    <Compile Include="src\Main\Sckins\Samples\WardenRook.cs" />
+    <Compile Include="src\Main\Sckins\Samples\WorkedOutT5.cs" />
+    <Compile Include="src\Main\Sckins\Samples\WoundedPulse.cs" />
+    <Compile Include="src\Main\Sckins\Samples\xi556Colours.cs" />
+    <Compile Include="src\Main\Scripting\DummyArmor.cs" />
+    <Compile Include="src\Main\Scripting\GMSTH.cs" />
+    <Compile Include="src\Main\Settings\SettingButton.cs" />
+    <Compile Include="src\Main\Settings\SettingsLevel.cs" />
+    <Compile Include="src\Main\Settings\BindCategory.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\BuyOperator.cs" />
+    <Compile Include="src\Main\GUI\CONFIRM.cs" />
+    <Compile Include="src\Operators\Mechanics\KillCam.cs" />
+    <Compile Include="src\Operators\Mechanics\LocalOperUI.cs" />
+    <Compile Include="src\Main\GUI\RenownGained.cs" />
+    <Compile Include="src\Main\GUI\SSButton.cs" />
+    <Compile Include="src\Main\MenuSign.cs" />
+    <Compile Include="src\Operators\Mechanics\DeadBody.cs" />
+    <Compile Include="src\Operators\Mechanics\OperatorHead.cs" />
+    <Compile Include="src\Main\PlayerStats.cs" />
+    <Compile Include="src\Main\ReppelLabel.cs" />
+    <Compile Include="src\Main\Scripting\LocalOutsideBlock.cs" />
+    <Compile Include="src\Main\Scripting\RoomSelecter.cs" />
+    <Compile Include="src\Main\Scripting\SiteSelector.cs" />
+    <Compile Include="src\Main\Settings\ChangeKeyBindButton.cs" />
+    <Compile Include="src\Main\Settings\KeyBindButton.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\operIconFastTravel.cs" />
+    <Compile Include="src\Main\Settings\SettingsButton.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\CategoryButton.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\CodeInput.cs" />
+    <Compile Include="src\Main\Menu\CustomizationLevel\EquipmentSkin.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\HSVColor.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\openPackButton.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\OperatorSkins.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\QualityButton.cs" />
+    <Compile Include="src\Main\Menu\ShopLevel\ShopLevel.cs" />
+    <Compile Include="src\Main\Signs.cs" />
+    <Compile Include="src\Main\Sckins\SkinElement.cs" />
+    <Compile Include="src\Main\SoundSource.cs" />
+    <Compile Include="src\Main\SpawnLocation.cs" />
+    <Compile Include="src\Main\Scripting\Stair.cs" />
+    <Compile Include="src\Main\stairs.cs" />
+    <Compile Include="src\Main\StatsData.cs" />
+    <Compile Include="src\Operators\Mechanics\Terrorist.cs" />
+    <Compile Include="src\Main\R6SMainUpdate.cs" />
+    <Compile Include="src\Main\Tutorial\DialogueEditor.cs" />
+    <Compile Include="src\Main\Tutorial\GMTutorial.cs" />
+    <Compile Include="src\Main\Tutorial\TutorialLevel.cs" />
+    <Compile Include="src\Main\updater.cs" />
+    <Compile Include="src\NetMessages\NMBreakDevice.cs" />
+    <Compile Include="src\NetMessages\HitScan.cs" />
+    <Compile Include="src\NetMessages\NMBlitzFlash.cs" />
+    <Compile Include="src\NetMessages\NMCalled.cs" />
+    <Compile Include="src\NetMessages\NMChangeInventoryItem.cs" />
+    <Compile Include="src\NetMessages\NMChangeOper.cs" />
+    <Compile Include="src\NetMessages\NMChangeSkin.cs" />
+    <Compile Include="src\NetMessages\NMChangeState.cs" />
+    <Compile Include="src\NetMessages\NMConfirmLoading.cs" />
+    <Compile Include="src\NetMessages\NMConfirmSelection.cs" />
+    <Compile Include="src\NetMessages\NMFlash.cs" />
+    <Compile Include="src\NetMessages\NMGamemodeEvent.cs" />
+    <Compile Include="src\NetMessages\NMInvisForDrones.cs" />
+    <Compile Include="src\NetMessages\NMKnifeStab.cs" />
+    <Compile Include="src\NetMessages\NMLaunchers.cs" />
+    <Compile Include="src\NetMessages\NMLoseDefuser.cs" />
+    <Compile Include="src\NetMessages\NMMozzieSteal.cs" />
+    <Compile Include="src\NetMessages\NMName.cs" />
+    <Compile Include="src\NetMessages\NMPickUpDefuser.cs" />
+    <Compile Include="src\NetMessages\NMReinforce.cs" />
+    <Compile Include="src\NetMessages\NMRemoveBarricade.cs" />
+    <Compile Include="src\NetMessages\NMRemoveCastleBarricade.cs" />
+    <Compile Include="src\NetMessages\NMSiteSelected.cs" />
+    <Compile Include="src\NetMessages\NMSonicBurst.cs" />
+    <Compile Include="src\NetMessages\NMSoundSource.cs" />
+    <Compile Include="src\NetMessages\NMSpawnDeadBody.cs" />
+    <Compile Include="src\NetMessages\NMSuggestInfo.cs" />
+    <Compile Include="src\NetMessages\NMTeams.cs" />
+    <Compile Include="src\NetMessages\NMThrowable.cs" />
+    <Compile Include="src\NetMessages\NMExplosion.cs" />
+    <Compile Include="src\NetMessages\NMFireBullet.cs" />
+    <Compile Include="src\NetMessages\NMHitScan.cs" />
+    <Compile Include="src\NetMessages\NMHoldAngle.cs" />
+    <Compile Include="src\NetMessages\NMSelectedOper.cs" />
+    <Compile Include="src\NetMessages\NMSmokeCanister.cs" />
+    <Compile Include="src\NetMessages\NMTrackedByJackal.cs" />
+    <Compile Include="src\NetMessages\NMUpdateHealth.cs" />
+    <Compile Include="src\NetMessages\NMUpdateShieldState.cs" />
+    <Compile Include="src\NetMessages\SendInfo.cs" />
+    <Compile Include="src\Operators\Attackers\Blackbeard.cs" />
+    <Compile Include="src\Operators\Attackers\Buck.cs" />
+    <Compile Include="src\Operators\Attackers\Capitao.cs" />
+    <Compile Include="src\Operators\Attackers\Dokkaebi.cs" />
+    <Compile Include="src\Operators\Attackers\Finka.cs" />
+    <Compile Include="src\Operators\Attackers\Gridlock.cs" />
+    <Compile Include="src\Operators\Attackers\Hibana.cs" />
+    <Compile Include="src\Operators\Attackers\Jackal.cs" />
+    <Compile Include="src\Operators\Attackers\Maverick.cs" />
+    <Compile Include="src\Operators\Attackers\Nokk.cs" />
+    <Compile Include="src\Operators\Attackers\Nomad.cs" />
+    <Compile Include="src\Operators\Attackers\Sledge.cs" />
+    <Compile Include="src\Operators\Attackers\Ying.cs" />
+    <Compile Include="src\Operators\Attackers\Zofia.cs" />
+    <Compile Include="src\Operators\Defenders\Alibi.cs" />
+    <Compile Include="src\Operators\Defenders\Castle.cs" />
+    <Compile Include="src\Operators\Defenders\Caveira.cs" />
+    <Compile Include="src\Operators\Defenders\Echo.cs" />
+    <Compile Include="src\Operators\Defenders\ELa.cs" />
+    <Compile Include="src\Operators\Defenders\Frost.cs" />
+    <Compile Include="src\Operators\Defenders\Goyo.cs" />
+    <Compile Include="src\Operators\Defenders\Kaid.cs" />
+    <Compile Include="src\Operators\Defenders\Lesion.cs" />
+    <Compile Include="src\Operators\Defenders\Mira.cs" />
+    <Compile Include="src\Operators\Defenders\Mozzie.cs" />
+    <Compile Include="src\Operators\Defenders\Valkyrie.cs" />
+    <Compile Include="src\Operators\Defenders\Vigil.cs" />
+    <Compile Include="src\Operators\Defenders\Warden.cs" />
+    <Compile Include="src\Operators\Attackers\RecruitAtt.cs" />
+    <Compile Include="src\Operators\Defenders\RecruitDef.cs" />
+    <Compile Include="src\Particles\Jammed.cs" />
+    <Compile Include="src\Particles\Snowflake.cs" />
+    <Compile Include="src\Screen.cs" />
+    <Compile Include="src\Spectatable\BulletProofCamera.cs" />
+    <Compile Include="src\Devices\Throwable\C4.cs" />
+    <Compile Include="src\Devices\IHUD\Flash.cs" />
+    <Compile Include="src\Devices\Throwable\ImpactGrenade.cs" />
+    <Compile Include="src\Devices\IHUD\Knife.cs" />
+    <Compile Include="src\Devices\Launchers\Launchers.cs" />
+    <Compile Include="src\Devices\IHUD\MontagneFULL.cs" />
+    <Compile Include="src\Devices\IHUD\MVG.cs" />
+    <Compile Include="src\Devices\Placeable\Placeable.cs" />
+    <Compile Include="src\Devices\Throwable\Rocky.cs" />
+    <Compile Include="src\Devices\Placeable\ThermalCharge.cs" />
+    <Compile Include="src\Devices\IHUD\ThermalScope.cs" />
+    <Compile Include="src\Devices\Throwable\Throwable.cs" />
+    <Compile Include="src\Devices\Throwable\BaseGrenade.cs" />
+    <Compile Include="src\Breakables\SimpleBarricade.cs" />
+    <Compile Include="src\Devices\Throwable\Candela.cs" />
+    <Compile Include="src\Particles\Electricity.cs" />
+    <Compile Include="src\Particles\Fire.cs" />
+    <Compile Include="src\Particles\Gas.cs" />
+    <Compile Include="src\Devices\Placeable\Defuser.cs" />
+    <Compile Include="src\Devices\Placeable\ADS.cs" />
+    <Compile Include="src\Devices\Launchers\AirJabGun.cs" />
+    <Compile Include="src\Devices\IHUD\CCEShield.cs" />
+    <Compile Include="src\Devices\IHUD\BallisticShield.cs" />
+    <Compile Include="src\Devices\Placeable\BarbedWire.cs" />
+    <Compile Include="src\Devices\Placeable\Breach.cs" />
+    <Compile Include="src\Devices\BreachForceWave.cs" />
+    <Compile Include="src\Devices\Launchers\BuckShotgun.cs" />
+    <Compile Include="src\Devices\IHUD\BuffFinka.cs" />
+    <Compile Include="src\Devices\Placeable\CastleBarricade.cs" />
+    <Compile Include="src\Devices\Placeable\CED.cs" />
+    <Compile Include="src\Devices\Placeable\Claymore.cs" />
+    <Compile Include="src\Devices\Placeable\ClusterBomb.cs" />
+    <Compile Include="src\Devices\Placeable\ClusterCharge.cs" />
+    <Compile Include="src\Devices\Launchers\ContactGrenade.cs" />
+    <Compile Include="src\Devices\Launchers\Crossbow.cs" />
+    <Compile Include="src\Devices\Placeable\DeployableShield.cs" />
+    <Compile Include="src\Devices\Device.cs" />
+    <Compile Include="src\Devices\Throwable\Drone.cs" />
+    <Compile Include="src\Devices\Placeable\EDD.cs" />
+    <Compile Include="src\Devices\IHUD\ElectronicsDetector.cs" />
+    <Compile Include="src\Devices\Launchers\FireBolt.cs" />
+    <Compile Include="src\Devices\IHUD\FlashShield.cs" />
+    <Compile Include="src\Devices\Throwable\GasCanister.cs" />
+    <Compile Include="src\Devices\Launchers\GrenadeLauncher.cs" />
+    <Compile Include="src\Devices\Throwable\GUmine.cs" />
+    <Compile Include="src\Devices\IHUD\Hammer.cs" />
+    <Compile Include="src\Devices\Launchers\HealBullet.cs" />
+    <Compile Include="src\Devices\HealthUp.cs" />
+    <Compile Include="src\Devices\Throwable\ImpactWave.cs" />
+    <Compile Include="src\Devices\Placeable\Jammer.cs" />
+    <Compile Include="src\Devices\Launchers\LifeLine.cs" />
+    <Compile Include="src\Devices\IHUD\Luison.cs" />
+    <Compile Include="src\Devices\Throwable\MagNET.cs" />
+    <Compile Include="src\Devices\Throwable\ProximityAlarm.cs" />
+    <Compile Include="src\Devices\IHUD\PulseScanner.cs" />
+    <Compile Include="src\Devices\Placeable\Rook.cs" />
+    <Compile Include="src\Devices\Throwable\RTILA.cs" />
+    <Compile Include="src\Devices\IHUD\GrowthShield.cs" />
+    <Compile Include="src\Devices\Launchers\ShockGrenade.cs" />
+    <Compile Include="src\Devices\Launchers\SmokeBolt.cs" />
+    <Compile Include="src\Devices\Throwable\SonicBurst.cs" />
+    <Compile Include="src\Devices\Steps.cs" />
+    <Compile Include="src\Devices\Launchers\Stimulator.cs" />
+    <Compile Include="src\Devices\Throwable\TwitchDrone.cs" />
+    <Compile Include="src\Devices\Placeable\VolcanShield.cs" />
+    <Compile Include="src\Devices\Throwable\Yokai.cs" />
+    <Compile Include="src\Main\Scripting\DoorFrame.cs" />
+    <Compile Include="src\Guns\Rifle\556xi.cs" />
+    <Compile Include="src\Guns\Rifle\AK12.cs" />
+    <Compile Include="src\Guns\Rifle\AUGa2.cs" />
+    <Compile Include="src\Guns\Rifle\COMANDO552.cs" />
+    <Compile Include="src\Guns\LMG\DP27.cs" />
+    <Compile Include="src\Guns\Rifle\F2.cs" />
+    <Compile Include="src\Guns\SMG\FMG.cs" />
+    <Compile Include="src\Guns\Rifle\G36.cs" />
+    <Compile Include="src\Guns\LMG\G8A1.cs" />
+    <Compile Include="src\Guns\Pistols\GSH.cs" />
+    <Compile Include="src\Guns\DMR\HK417.cs" />
+    <Compile Include="src\Guns\Rifle\L85A2.cs" />
+    <Compile Include="src\Guns\Pistols\LFP586.cs" />
+    <Compile Include="src\Guns\LMG\LMGE105.cs" />
+    <Compile Include="src\Guns\Shotguns\M870.cs" />
+    <Compile Include="src\Guns\DMR\Mk14.cs" />
+    <Compile Include="src\Guns\SMG\MP5.cs" />
+    <Compile Include="src\Guns\SMG\MP5K.cs" />
+    <Compile Include="src\Guns\SMG\MP7.cs" />
+    <Compile Include="src\Guns\NewBullet.cs" />
+    <Compile Include="src\Guns\DMR\OTs11.cs" />
+    <Compile Include="src\Guns\Pistols\P12.cs" />
+    <Compile Include="src\Guns\Pistols\P9.cs" />
+    <Compile Include="src\Guns\Pistols\PMM.cs" />
+    <Compile Include="src\Guns\Rifle\R4C.cs" />
+    <Compile Include="src\Guns\LMG\RP41.cs" />
+    <Compile Include="src\Guns\Shotguns\SASG11.cs" />
+    <Compile Include="src\Guns\Shotguns\SGCQB.cs" />
+    <Compile Include="src\Guns\SMG\SMG-11.cs" />
+    <Compile Include="src\Guns\Shotguns\SuperShorty.cs" />
+    <Compile Include="src\Guns\SMG\UMP45.cs" />
+    <Compile Include="src\Guns\SMG\VSN.cs" />
+    <Compile Include="src\Holdable+.cs" />
+    <Compile Include="src\Main\GUI\EquipmentCard.cs" />
+    <Compile Include="src\Main\Scripting\GamemodeScripter.cs" />
+    <Compile Include="src\Main\R6SMouse.cs" />
+    <Compile Include="src\Main\GUI\OperatorSelection.cs" />
+    <Compile Include="src\Operators\Attackers\Ash.cs" />
+    <Compile Include="src\Operators\Attackers\Blitz.cs" />
+    <Compile Include="src\Operators\Attackers\Fuze.cs" />
+    <Compile Include="src\Operators\Attackers\IQ.cs" />
+    <Compile Include="src\Operators\Attackers\Montagne.cs" />
+    <Compile Include="src\Operators\Attackers\Thatcher.cs" />
+    <Compile Include="src\Operators\Attackers\Thermite.cs" />
+    <Compile Include="src\Operators\Attackers\Twitch.cs" />
+    <Compile Include="src\Operators\Defenders\Bandit.cs" />
+    <Compile Include="src\Operators\Defenders\Kapkan.cs" />
+    <Compile Include="src\Operators\Defenders\Mute.cs" />
+    <Compile Include="src\Operators\Defenders\Pulse.cs" />
+    <Compile Include="src\Operators\Defenders\Rook.cs" />
+    <Compile Include="src\Operators\Defenders\Smoke.cs" />
+    <Compile Include="src\Operators\Defenders\Tachankin.cs" />
+    <Compile Include="src\Spectatable\ARGUS.cs" />
+    <Compile Include="src\Spectatable\BlackEye.cs" />
+    <Compile Include="src\Spectatable\EvilEye.cs" />
+    <Compile Include="src\Spectatable\ISpectatable.cs" />
+    <Compile Include="src\Devices\Throwable\EMP.cs" />
+    <Compile Include="src\Devices\Throwable\EMPgrenade.cs" />
+    <Compile Include="src\Devices\Launchers\FireGrenade.cs" />
+    <Compile Include="src\Devices\Throwable\Flashbang.cs" />
+    <Compile Include="src\Devices\Throwable\Flashlight.cs" />
+    <Compile Include="src\Devices\Throwable\Grzmot.cs" />
+    <Compile Include="src\Guns\Rifle\C416.cs" />
+    <Compile Include="src\Guns\SMG\P90.cs" />
+    <Compile Include="src\Operators\Attackers\Glaz.cs" />
+    <Compile Include="src\Guns\GunDev.cs" />
+    <Compile Include="src\Operators\Mechanics\Attacker.cs" />
+    <Compile Include="src\Operators\Mechanics\Defender.cs" />
+    <Compile Include="src\Main\Mod.cs" />
+    <Compile Include="src\Operators\Mechanics\OPEQ.cs" />
+    <Compile Include="src\Operators\Mechanics\Operator.cs" />
+    <Compile Include="src\Main\GUI\PickPhase.cs" />
+    <Compile Include="src\Operators\Defenders\Doc.cs" />
+    <Compile Include="src\Operators\Defenders\Jager.cs" />
+    <Compile Include="src\Main\Scripting\PlantZone.cs" />
+    <Compile Include="src\Devices\Throwable\GraySmokeCloud.cs" />
+    <Compile Include="src\Devices\Throwable\SmokeGrenade.cs" />
+    <Compile Include="src\Spectatable\OBSCamera.cs" />
+    <Compile Include="src\Spectatable\ObservationThing.cs" />
+    <Compile Include="src\Spectatable\Phone.cs" />
+    <Compile Include="src\Spectatable\OtherPhones.cs" />
+    <Compile Include="src\StimulateLight.cs" />
+    <Compile Include="src\StunLight.cs" />
+    <Compile Include="src\Upstairs.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
